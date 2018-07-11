@@ -12,7 +12,7 @@ const HeaderWrapper = styled.div`
   margin-bottom: 30px;
   overflow: hidden;
   position: relative;
-  height: ${({isHome}) => (isHome ? "70vh" : "20vh")};
+  height: 50vh;
   h1{
     margin: 0;
     img {
@@ -45,33 +45,33 @@ const MainNav = styled.nav`
 
 class Header extends Component {
 
-  componentDidUpdate(prevProps, prevState) {
-    const { location } = this.props;
-    if(location.pathname !== prevProps.location.pathname){
-      if(this.props.location.pathname === '/'){
-        this.wrapper.animate([
-          { height: '20vh' },
-          { height: '70vh' }        
-        ], {
-          duration: 300,
-          fill: 'forwards',
-          easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
-          iterations: 1
-        })
-      }
-      else {
-        this.wrapper.animate([
-          { height: '70vh' },
-          { height: '20vh' }        
-        ], {
-          duration: 300,
-          fill: 'forwards',
-          easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
-          iterations: 1
-        })
-      }
-    }
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   const { location } = this.props;
+  //   if(location.pathname !== prevProps.location.pathname){
+  //     if(this.props.location.pathname === '/'){
+  //       this.wrapper.animate([
+  //         { height: '20vh' },
+  //         { height: '70vh' }        
+  //       ], {
+  //         duration: 300,
+  //         fill: 'forwards',
+  //         easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
+  //         iterations: 1
+  //       })
+  //     }
+  //     else {
+  //       this.wrapper.animate([
+  //         { height: '70vh' },
+  //         { height: '20vh' }        
+  //       ], {
+  //         duration: 300,
+  //         fill: 'forwards',
+  //         easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
+  //         iterations: 1
+  //       })
+  //     }
+  //   }
+  // }
 
   render() {
     const { data, location } = this.props;
